@@ -57,11 +57,14 @@ public Q_SLOTS:
 private slots:
     void on_horizontalSlider_valueChanged(int value);
     void on_horizontalSlider_2_valueChanged(int value);
+    void on_horizontalSlider_3_valueChanged(int value);
+    void on_horizontalSlider_4_valueChanged(int value);
+    void on_horizontalSlider_5_valueChanged(int value);
+    void keyboard_control_click();
 private:
 	Ui::MainWindowDesign ui;
 	QNode qnode;
 };
-
 }  // namespace insrobo
 
 #endif // insrobo_MAIN_WINDOW_H

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1011</width>
-    <height>704</height>
+    <height>716</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -108,7 +108,7 @@
     <string>Command Panel</string>
    </property>
    <attribute name="dockWidgetArea">
-    <number>1</number>
+    <number>2</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_2">
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -119,7 +119,7 @@
        </property>
        <widget class="QWidget" name="tab_3">
         <attribute name="title">
-         <string>Tab 1</string>
+         <string>ROS/Robot control</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_10">
          <item>
@@ -127,278 +127,273 @@
            <property name="title">
             <string>Ros Master</string>
            </property>
+           <property name="flat">
+            <bool>false</bool>
+           </property>
            <widget class="QWidget" name="">
             <property name="geometry">
              <rect>
-              <x>10</x>
-              <y>32</y>
-              <width>262</width>
-              <height>479</height>
+              <x>11</x>
+              <y>35</y>
+              <width>258</width>
+              <height>531</height>
              </rect>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_9">
+            <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_6">
+              <layout class="QVBoxLayout" name="verticalLayout_3">
                <item>
-                <layout class="QVBoxLayout" name="verticalLayout_5">
+                <widget class="QLabel" name="label">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <property name="text">
+                  <string>Ros Master Url</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="line_edit_master">
+                 <property name="text">
+                  <string>http://192.168.1.2:11311/</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_2">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <property name="text">
+                  <string>Ros IP</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="line_edit_host">
+                 <property name="text">
+                  <string>192.168.1.67</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_3">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <property name="text">
+                  <string>Ros Hostname</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="line_edit_topic">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="text">
+                  <string>unused</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkbox_use_environment">
+                 <property name="layoutDirection">
+                  <enum>Qt::RightToLeft</enum>
+                 </property>
+                 <property name="text">
+                  <string>Use environment variables</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkbox_remember_settings">
+                 <property name="layoutDirection">
+                  <enum>Qt::RightToLeft</enum>
+                 </property>
+                 <property name="text">
+                  <string>Remember settings on startup</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
                  <item>
-                  <layout class="QVBoxLayout" name="verticalLayout_3">
-                   <item>
-                    <widget class="QLabel" name="label">
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <property name="text">
-                      <string>Ros Master Url</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLineEdit" name="line_edit_master">
-                     <property name="text">
-                      <string>http://192.168.1.2:11311/</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_2">
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <property name="text">
-                      <string>Ros IP</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLineEdit" name="line_edit_host">
-                     <property name="text">
-                      <string>192.168.1.67</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_3">
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <property name="text">
-                      <string>Ros Hostname</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLineEdit" name="line_edit_topic">
-                     <property name="enabled">
-                      <bool>false</bool>
-                     </property>
-                     <property name="text">
-                      <string>unused</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="checkbox_use_environment">
-                     <property name="layoutDirection">
-                      <enum>Qt::RightToLeft</enum>
-                     </property>
-                     <property name="text">
-                      <string>Use environment variables</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="checkbox_remember_settings">
-                     <property name="layoutDirection">
-                      <enum>Qt::RightToLeft</enum>
-                     </property>
-                     <property name="text">
-                      <string>Remember settings on startup</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <layout class="QHBoxLayout" name="horizontalLayout_2">
-                     <item>
-                      <widget class="QPushButton" name="quit_button">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="text">
-                        <string>Quit</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="button_connect">
-                       <property name="enabled">
-                        <bool>true</bool>
-                       </property>
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="toolTip">
-                        <string>Set the target to the current joint trajectory state.</string>
-                       </property>
-                       <property name="statusTip">
-                        <string>Clear all waypoints and set the target to the current joint trajectory state.</string>
-                       </property>
-                       <property name="text">
-                        <string>Connect</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </item>
-                  </layout>
+                  <widget class="QPushButton" name="quit_button">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Quit</string>
+                   </property>
+                  </widget>
                  </item>
                  <item>
-                  <spacer name="verticalSpacer">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
+                  <widget class="QPushButton" name="button_connect">
+                   <property name="enabled">
+                    <bool>true</bool>
                    </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
                    </property>
-                  </spacer>
+                   <property name="toolTip">
+                    <string>Set the target to the current joint trajectory state.</string>
+                   </property>
+                   <property name="statusTip">
+                    <string>Clear all waypoints and set the target to the current joint trajectory state.</string>
+                   </property>
+                   <property name="text">
+                    <string>Connect</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_9">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">image: url(:/images/insta360_logo.png);</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                 <item>
+                  <widget class="QPushButton" name="pushButton_U">
+                   <property name="text">
+                    <string>u</string>
+                   </property>
+                   <property name="shortcut">
+                    <string>U</string>
+                   </property>
+                  </widget>
                  </item>
                  <item>
-                  <layout class="QVBoxLayout" name="verticalLayout_4">
-                   <item>
-                    <layout class="QHBoxLayout" name="horizontalLayout">
-                     <item>
-                      <widget class="QPushButton" name="pushButton_2">
-                       <property name="text">
-                        <string>U</string>
-                       </property>
-                       <property name="shortcut">
-                        <string>U</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="pushButton">
-                       <property name="text">
-                        <string>I</string>
-                       </property>
-                       <property name="shortcut">
-                        <string>I</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="pushButton_3">
-                       <property name="text">
-                        <string>O</string>
-                       </property>
-                       <property name="shortcut">
-                        <string>O</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </item>
-                   <item>
-                    <layout class="QHBoxLayout" name="horizontalLayout_3">
-                     <item>
-                      <widget class="QPushButton" name="pushButton_4">
-                       <property name="text">
-                        <string>J</string>
-                       </property>
-                       <property name="shortcut">
-                        <string>J</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="pushButton_5">
-                       <property name="text">
-                        <string>K</string>
-                       </property>
-                       <property name="shortcut">
-                        <string>K</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="pushButton_6">
-                       <property name="text">
-                        <string>L</string>
-                       </property>
-                       <property name="shortcut">
-                        <string>L</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </item>
-                   <item>
-                    <layout class="QHBoxLayout" name="horizontalLayout_4">
-                     <item>
-                      <widget class="QPushButton" name="pushButton_7">
-                       <property name="text">
-                        <string>M</string>
-                       </property>
-                       <property name="shortcut">
-                        <string>M</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="pushButton_8">
-                       <property name="text">
-                        <string>,</string>
-                       </property>
-                       <property name="shortcut">
-                        <string>,</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QPushButton" name="pushButton_9">
-                       <property name="text">
-                        <string>.</string>
-                       </property>
-                       <property name="shortcut">
-                        <string>.</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </item>
-                  </layout>
+                  <widget class="QPushButton" name="pushButton_I">
+                   <property name="text">
+                    <string>i</string>
+                   </property>
+                   <property name="shortcut">
+                    <string>I</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_O">
+                   <property name="text">
+                    <string>o</string>
+                   </property>
+                   <property name="shortcut">
+                    <string>O</string>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>
                <item>
-                <widget class="QCheckBox" name="checkBox">
-                 <property name="text">
-                  <string>Omni Mode</string>
-                 </property>
-                 <property name="shortcut">
-                  <string>[</string>
-                 </property>
-                </widget>
+                <layout class="QHBoxLayout" name="horizontalLayout_3">
+                 <item>
+                  <widget class="QPushButton" name="pushButton_J">
+                   <property name="text">
+                    <string>j</string>
+                   </property>
+                   <property name="shortcut">
+                    <string>J</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_K">
+                   <property name="text">
+                    <string>k</string>
+                   </property>
+                   <property name="shortcut">
+                    <string>K</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_L">
+                   <property name="text">
+                    <string>l</string>
+                   </property>
+                   <property name="shortcut">
+                    <string>L</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <widget class="QPushButton" name="pushButton_M">
+                   <property name="text">
+                    <string>m</string>
+                   </property>
+                   <property name="shortcut">
+                    <string>M</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_dot">
+                   <property name="text">
+                    <string>,</string>
+                   </property>
+                   <property name="shortcut">
+                    <string>,</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_point">
+                   <property name="text">
+                    <string>.</string>
+                   </property>
+                   <property name="shortcut">
+                    <string>.</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </item>
               </layout>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="checkBox_omni_mode">
+               <property name="text">
+                <string>Omni Mode</string>
+               </property>
+               <property name="shortcut">
+                <string/>
+               </property>
+              </widget>
              </item>
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_5">
@@ -435,8 +430,14 @@
                    <property name="tabletTracking">
                     <bool>false</bool>
                    </property>
+                   <property name="frameShape">
+                    <enum>QFrame::Box</enum>
+                   </property>
                    <property name="smallDecimalPoint">
                     <bool>false</bool>
+                   </property>
+                   <property name="segmentStyle">
+                    <enum>QLCDNumber::Flat</enum>
                    </property>
                   </widget>
                  </item>
@@ -462,7 +463,11 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLCDNumber" name="lcdNumber_2"/>
+                  <widget class="QLCDNumber" name="lcdNumber_2">
+                   <property name="segmentStyle">
+                    <enum>QLCDNumber::Flat</enum>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>
@@ -476,8 +481,268 @@
        </widget>
        <widget class="QWidget" name="tab_4">
         <attribute name="title">
-         <string>Tab 2</string>
+         <string>Camera pan</string>
         </attribute>
+        <widget class="QToolBox" name="toolBox">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>301</width>
+           <height>351</height>
+          </rect>
+         </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="page">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>301</width>
+            <height>289</height>
+           </rect>
+          </property>
+          <attribute name="label">
+           <string>Camera pan control</string>
+          </attribute>
+          <widget class="QWidget" name="">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>0</y>
+             <width>285</width>
+             <height>281</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_15">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_13">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_12">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_6">
+                      <item>
+                       <widget class="QLabel" name="label_6">
+                        <property name="text">
+                         <string>yaw   </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QSlider" name="horizontalSlider_3">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <widget class="QLCDNumber" name="lcdNumber_5">
+                      <property name="segmentStyle">
+                       <enum>QLCDNumber::Flat</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_10">
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_7">
+                      <item>
+                       <widget class="QLabel" name="label_7">
+                        <property name="text">
+                         <string>pitch </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QSlider" name="horizontalSlider_4">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <widget class="QLCDNumber" name="lcdNumber_4">
+                      <property name="segmentStyle">
+                       <enum>QLCDNumber::Flat</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_11">
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_8">
+                      <item>
+                       <widget class="QLabel" name="label_8">
+                        <property name="text">
+                         <string> raw   </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QSlider" name="horizontalSlider_5">
+                        <property name="orientation">
+                         <enum>Qt::Horizontal</enum>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <widget class="QLCDNumber" name="lcdNumber_3">
+                      <property name="segmentStyle">
+                       <enum>QLCDNumber::Flat</enum>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_12">
+                  <item>
+                   <widget class="QPushButton" name="pushButton_camera_set">
+                    <property name="text">
+                     <string>Set</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_camera_reset">
+                    <property name="text">
+                     <string>Reset</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="checkBox_handlemode">
+                <property name="text">
+                 <string>Handle mode</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_14">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <item>
+                 <widget class="QPushButton" name="pushButton_Q">
+                  <property name="text">
+                   <string>Q</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>Q</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_W">
+                  <property name="text">
+                   <string>W</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>W</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_E">
+                  <property name="text">
+                   <string>E</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>E</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_13">
+                <item>
+                 <widget class="QPushButton" name="pushButton_A">
+                  <property name="text">
+                   <string>A</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>A</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_S">
+                  <property name="text">
+                   <string>S</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>S</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_D">
+                  <property name="text">
+                   <string>D</string>
+                  </property>
+                  <property name="shortcut">
+                   <string>D</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="page_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>301</width>
+            <height>279</height>
+           </rect>
+          </property>
+          <attribute name="label">
+           <string>Page 2</string>
+          </attribute>
+         </widget>
+        </widget>
        </widget>
       </widget>
      </item>
