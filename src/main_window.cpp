@@ -10,6 +10,7 @@
 *****************************************************************************/
 
 #include <QtGui>
+#include <QDebug>
 #include <QMessageBox>
 #include <iostream>
 #include "../include/insrobo/main_window.hpp"
@@ -50,8 +51,118 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
     if ( ui.checkbox_remember_settings->isChecked() ) {
         on_button_connect_clicked(true);
     }
+
+    /*********************
+    ** Keyboard Connect To Slot
+    **********************/
+    // Robot control
+    connect(ui.pushButton_I,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_U,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_O,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_J,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_K,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_L,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_M,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_dot,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_point,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+
+    // Camera pan control
+    connect(ui.pushButton_W,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_A,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_S,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_D,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_Q,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
+    connect(ui.pushButton_E,SIGNAL(clicked()),this,SLOT(keyboard_control_click()));
 }
 
+/*****************************************************************************
+** LCDnumbers Display
+*****************************************************************************/
+// Show the speed setting on LCD
+// Linear speed
+void insrobo::MainWindow::on_horizontalSlider_valueChanged(int value)
+{
+    int linear_speed_set = ui.horizontalSlider->value();
+    QString linear_speed_set_str = QString::number(linear_speed_set, 10);
+    ui.lcdNumber->display(linear_speed_set_str);
+}
+// Angular speed
+void insrobo::MainWindow::on_horizontalSlider_2_valueChanged(int value)
+{
+    int angular_speed_set = ui.horizontalSlider_2->value();
+    QString angular_speed_set_str = QString::number(angular_speed_set, 10);
+    ui.lcdNumber_2->display(angular_speed_set_str);
+}
+
+// Show the angular setting on LCD
+// Camera pan yaw
+void insrobo::MainWindow::on_horizontalSlider_3_valueChanged(int value)
+{
+    int yaw_set = ui.horizontalSlider_3->value();
+    QString yaw_set_str = QString::number(yaw_set, 10);
+    ui.lcdNumber_5->display(yaw_set_str);
+}
+// Camera pan pitch
+void insrobo::MainWindow::on_horizontalSlider_4_valueChanged(int value)
+{
+    int pitch_set = ui.horizontalSlider_4->value();
+    QString pitch_set_str = QString::number(pitch_set, 10);
+    ui.lcdNumber_4->display(pitch_set_str);
+}
+// Camera pan raw
+void insrobo::MainWindow::on_horizontalSlider_5_valueChanged(int value)
+{
+    int raw_set = ui.horizontalSlider_5->value();
+    QString raw_set_str = QString::number(raw_set, 10);
+    ui.lcdNumber_3->display(raw_set_str);
+}
+
+/*****************************************************************************
+** Keyboard Control
+*****************************************************************************/
+// Receive keyboard signal
+void MainWindow::keyboard_control_click()
+{
+    QPushButton* btn = qobject_cast<QPushButton*>(sender());
+    char keyboard_value = btn->text().toStdString()[0];
+    bool omni_mode = ui.checkBox_omni_mode->isChecked();
+
+    int linear_speed_set = ui.horizontalSlider->value();
+    int angular_speed_set = ui.horizontalSlider_2->value();
+    double linear_speed = linear_speed_set * 0.01;
+    double angular_speed = angular_speed_set * 0.01;
+
+    switch(keyboard_value)
+    {
+        case 'u':
+            qnode.set_cmd_vel_keyboard(omni_mode?'U':'u', linear_speed, angular_speed);
+            break;
+        case 'i':
+            qnode.set_cmd_vel_keyboard(omni_mode?'I':'i', linear_speed, angular_speed);
+            break;
+        case 'o':
+            qnode.set_cmd_vel_keyboard(omni_mode?'O':'o', linear_speed, angular_speed);
+            break;
+        case 'j':
+            qnode.set_cmd_vel_keyboard(omni_mode?'J':'j', linear_speed, angular_speed);
+            break;
+        case 'k':
+            qnode.set_cmd_vel_keyboard(omni_mode?'K':'k', linear_speed, angular_speed);
+            break;
+        case 'l':
+            qnode.set_cmd_vel_keyboard(omni_mode?'L':'l', linear_speed, angular_speed);
+            break;
+        case 'm':
+            qnode.set_cmd_vel_keyboard(omni_mode?'M':'m', linear_speed, angular_speed);
+            break;
+        case ',':
+            qnode.set_cmd_vel_keyboard(omni_mode?'<':',', linear_speed, angular_speed);
+            break;
+        case '.':
+            qnode.set_cmd_vel_keyboard(omni_mode?'>':'.', linear_speed, angular_speed);
+            break;
+    }
+}
 MainWindow::~MainWindow() {}
 
 /*****************************************************************************
@@ -168,18 +279,3 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 
 }  // namespace insrobo
-
-void insrobo::MainWindow::on_horizontalSlider_valueChanged(int value)
-{
-    int linear_speed_set = ui.horizontalSlider->value();
-    QString linear_speed_set_str = QString::number(linear_speed_set, 10);
-    ui.lcdNumber->display(linear_speed_set_str);
-}
-
-
-void insrobo::MainWindow::on_horizontalSlider_2_valueChanged(int value)
-{
-    int angular_speed_set = ui.horizontalSlider_2->value();
-    QString angular_speed_set_str = QString::number(angular_speed_set, 10);
-    ui.lcdNumber_2->display(angular_speed_set_str);
-}

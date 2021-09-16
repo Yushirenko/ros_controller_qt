@@ -21,6 +21,7 @@
 #ifndef Q_MOC_RUN
 #include <ros/ros.h>
 #include <std_msgs/String.h>
+#include <geometry_msgs/Twist.h>
 #endif
 #include <string>
 #include <QThread>
@@ -45,6 +46,7 @@ public:
 	bool init();
 	bool init(const std::string &master_url, const std::string &host_url);
 	void run();
+    void set_cmd_vel_keyboard(char keyboard_value, double linear_speed, double angular_speed);
 
 	/*********************
 	** Logging
@@ -69,6 +71,8 @@ private:
 	char** init_argv;
 	ros::Publisher chatter_publisher;
     ros::Subscriber chatter_subscriber;
+    ros::Publisher robot_cmd_vel_pub;
+    //ros::Publisher camera_cmd_vel_pub;
     QStringListModel logging_model;
 
     void chatter_callback(const std_msgs::String &msgs);
